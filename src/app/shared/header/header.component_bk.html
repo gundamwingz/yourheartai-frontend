@@ -1,0 +1,87 @@
+<!-- STRAT NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" (window:scroll)="windowScroll()"
+id="navbar">
+<div class="container">
+  <!-- LOGO -->
+  <a class="navbar-brand logo text-uppercase" href="/">
+  <!-- <a class="flex items-center text-white overflow-hidden pt-1 cursor-pointer no-underline flex-auto">  -->
+    Your Heart AI
+    <img src="assets/images/healthcare-hospital-medical-44-svgrepo-com.svg" alt="logo" height="50" class="h-8">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+    <i class="mdi mdi-menu"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav navbar-center" id="mySidenav">
+     
+      @if (this.isHomeActive){
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+          <a [ngxScrollTo]="'#home'" href="javascript: void(0);" class="nav-link">Home</a>
+        </li>     
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
+          <a [ngxScrollTo]="'#services'" href="javascript: void(0);" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
+          <a [ngxScrollTo]="'#features'"  href="javascript: void(0);" class="nav-link">Features</a>
+        </li>
+        <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+          <a [ngxScrollTo]="'#contact'" href="javascript: void(0);" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item" [routerLink]="'/dashboard'">
+          <a href="javascript: void(0);" [routerLinkActive]="'active'" class="nav-link">Dashboard</a>
+        </li>
+      } @else {
+        <li class="nav-item" [routerLink]="'/index'">
+          <a [ngxScrollTo]="'#home'" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}" href="javascript: void(0);" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item" [routerLink]="'/dashboard'">
+          <a href="javascript: void(0);" [routerLinkActive]="'active'" class="nav-link">Dashboard</a>
+        </li>
+      }
+
+      <!-- <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">
+        <a [ngxScrollTo]="'#pricing'" href="javascript: void(0);" class="nav-link">Pricing</a>
+      </li> -->
+      <!-- <li class="nav-item" [ngClass]="{'active':currentSection === 'team'}">
+        <a [ngxScrollTo]="'#team'" href="javascript: void(0);" class="nav-link">Team</a>
+      </li> -->
+      <!-- <li class="nav-item" [ngClass]="{'active':currentSection === 'blog'}">
+        <a [ngxScrollTo]="'#blog'" href="javascript: void(0);" class="nav-link">Blog</a>
+      </li> -->
+
+
+    </ul>
+    <div class="nav-button ms-auto">
+      <ul class="nav navbar-nav navbar-right">
+        @if (!this.isLoggedIn) {
+          <li>
+             <button type="button" class="btn btn-primary navbar-btn buttonCoolLeft " 
+             style="background: #2762da !important; border-color: #2762da !important;" routerLink="/login"><span>Log in</span></button>
+             <button type="button" class="btn btn-primary navbar-btn buttonCoolRight"
+             style="color:black; background: #ffffff !important; border-color: #95a0ab !important;" routerLink="/register"><span style="color:#2762da">Sign up</span></button>
+           </li>           
+        } @else {
+          <button type="button" mat-button [matMenuTriggerFor]="menu" class="btn btn-primary navbar-btn"
+          style="background: #2762da !important; border-color: #2762da !important; color: white">
+            <mat-icon
+          fontIcon="account_circle"
+          class="icon-fill size-6 text-2xl leading-6"></mat-icon>  
+            {{ this.user.username}}
+          </button> 
+            <mat-menu #menu="matMenu" class="flexnav" >
+              <button mat-menu-item>Account</button>              
+              <button mat-menu-item (click)="logout()">Logout</button>
+            </mat-menu>
+          <!-- <li>
+            <button type="button" class="btn btn-primary navbar-btn btn-rounded" (click)="logout()"
+            style="background: #2762da !important; border-color: #2762da !important;">Logout</button>
+          </li> -->
+        }
+      </ul>
+    </div>
+  </div>
+</div>
+</nav>
+<!-- END NAVBAR -->
+ <!-- wrap these buttons in ig statement to show only on home or index compoonent.. or else switch to different buttons with [routerLink]="'path'" -->

@@ -1,0 +1,94 @@
+<app-header></app-header>
+<div class="account-home-btn d-none d-sm-block">
+  <a href="/" class="text-white"><i class="mdi mdi-home h1"></i></a>
+</div>
+
+<!-- FIXME: Remake form so it shows toaster messages properly -->
+<section class="bg-account-pages vh-100">
+  <div class="display-table">
+    <div class="display-table-cell">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card account-card">
+              <div class="card-body">
+                <div class="text-center mt-3">
+                  <h3 class="fw-bold"><a href="/"
+                      class="text-dark text-uppercase account-pages-logo">Your Heart AI</a></h3>
+                  <p class="text-muted">Reset Password</p>
+                </div>
+                <div class="p-3">
+                  <div class="alert alert-warning  text-center" role="alert">
+                    Enter your email address and we'll send you an email with instructions to reset your password.
+                  </div>
+                  <form>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="password" class="form-control" [formControl]="emailControl" id="email" placeholder="Enter Email">
+                    </div>
+
+                    <div class="d-grid mt-3">
+                      <button type="submit" class="btn btn-primary" (click)="ResetRequest()">Reset your Password</button>
+                    </div>
+                    <div class="mt-4 mb-0 text-center">
+                      <p class="mb-0">
+                      <a href="/">
+                        Home
+                        </a>
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+    </div>
+  </div>
+
+  <!--START FOOTER ALTER-->
+<div id="style-switcher" [style]="isVisible ? 'left: 0px' : 'left: -168px'">
+  <div>
+    <h3>Select your color </h3>
+    <ul class="pattern">
+      <li>
+        <a (click)="setTheme('red')" class="color1" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color2" (click)="setTheme('green')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color3" (click)="setTheme('pink')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color4" (click)="setTheme('cyan')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color5" (click)="setTheme('purple')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color6" (click)="setTheme('blue')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color7" (click)="setTheme('orange')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color8" (click)="setTheme('yellow')" routerLink="#"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom">
+    <a href="javascript: void(0);" id="mode" class="mode-btn text-white" (click)="onChangeMode()">
+      <i class="mdi mdi-white-balance-sunny mode-light align-middle"></i>
+      <i class="mdi mdi-weather-sunny mode-dark align-middle"></i>
+    </a>
+    <!-- <a routerLink="#" class="settings" (click)="toggleSwitcher()"><i class="mdi mdi-cog  mdi-spin"></i></a> -->
+  </div>
+</div>
+  
+</section>
+<!-- end account-pages  -->

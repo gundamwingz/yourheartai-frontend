@@ -1,0 +1,107 @@
+<!--START FOOTER-->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 mt-4">
+        <h4>YOUR HEART AI</h4>
+        <div class="text-muted mt-4">
+          <ul class="list-unstyled footer-list">
+            <li><a href="javascript: void(0);">Home</a></li>
+            <li><a href="javascript: void(0);">About us</a></li>
+            <li><a href="javascript: void(0);">Careers</a></li>
+            <li><a href="javascript: void(0);">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <h4>Information</h4>
+        <div class="text-muted mt-4">
+          <ul class="list-unstyled footer-list">
+            <li><a href="javascript: void(0);">Terms & Condition</a></li>
+            <li><a href="javascript: void(0);">About us</a></li>
+            <li><a href="javascript: void(0);">Jobs</a></li>
+            <li><a href="javascript: void(0);">Bookmarks</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <h4>Support</h4>
+        <div class="mt-4">
+          <ul class="list-unstyled footer-list">
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Disscusion</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <h4>Subscribe</h4>
+        <div class="text-muted mt-4">
+          <p>In an ideal world this text wouldn’t exist, a client would acknowledge the importance of
+            having web copy before the design starts.</p>
+        </div>
+        <form class="form subscribe">
+          <input placeholder="Email" class="form-control" required>
+          <a href="javascript: void(0);" class="submit"><i class="pe-7s-paper-plane"></i></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--END FOOTER-->
+
+<!--START FOOTER ALTER-->
+<div class="footer-alt">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="float-start pull-none ">
+          <p class="copy-rights text-muted">{{ cur_year }} © YourHeartAI</p>
+        </div>
+        <div class="float-end pull-none ">
+          <img src="assets/images/payment.png" alt="payment-img" height="36" />
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--START FOOTER ALTER-->
+<div id="style-switcher" [style]="isVisible ? 'left: 0px' : 'left: -168px'">
+  <div>
+    <h3>Select your color </h3>
+    <ul class="pattern">
+      <li>
+        <a (click)="setTheme('red')" class="color1" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color2" (click)="setTheme('green')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color3" (click)="setTheme('pink')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color4" (click)="setTheme('cyan')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color5" (click)="setTheme('purple')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color6" (click)="setTheme('blue')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color7" (click)="setTheme('orange')" routerLink="#"></a>
+      </li>
+      <li>
+        <a class="color8" (click)="setTheme('yellow')" routerLink="#"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom">
+    <a href="javascript: void(0);" id="mode" class="mode-btn text-white" (click)="onChangeMode()">
+      <i class="mdi mdi-white-balance-sunny mode-light align-middle"></i>
+      <i class="mdi mdi-weather-sunny mode-dark align-middle"></i>
+    </a>
+    <!-- <a routerLink="#" class="settings" (click)="toggleSwitcher()"><i class="mdi mdi-cog  mdi-spin"></i></a> -->
+  </div>
+</div>

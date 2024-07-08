@@ -1,0 +1,45 @@
+import { Directive, HostBinding, HostListener, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { FileHandle } from '../data/interface/file-handle.model';
+import { EventEmitter } from '@angular/core';
+
+@Directive({
+  selector: '[appDrag]'
+})
+export class DragDirective {
+  @Output() files: EventEmitter<FileHandle> = new EventEmitter();
+
+  @HostBinding("style.background") private background = "#eee"; 
+
+  constructor(private sanitizer: DomSanitizer) { }
+
+  @HostListener("dragover", ["$event"])
+  public onDragOver(evt: DragEvent) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    this.background ='#999';
+  }
+  
+  //FIXME: The dragleave directive is no functioning as intended.... fix when get a chance
+  @HostListener("dragLeave", ["$event"])
+  public onDragLeave(evt: DragEvent) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    this.background ='#eee';
+  }
+
+  @HostListener("drop", ["$event"])
+  public onDrop(evt: DragEvent) {
+    evt.preventDefault();
+    evt.stopPropagation();
+    this.background ='#eee';
+
+    let fileHandle: FileHandle = null;
+
+    const file = evt.dataTransfer.files[0];
+    const url =  this.sanitizer.bypassSecurityTrustUrl(window.URL.createObjectURL(file));
+
+    fileHandle = {file, url};
+    this.files.emit(fileHandle);
+  }
+}

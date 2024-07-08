@@ -1,0 +1,235 @@
+<div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/images/sidebar-1.jpg">
+  <app-sidebar></app-sidebar>
+  <div class="sidebar-background" style="background-image: url(./assets/images/sidebar-4.jpg)"></div> 
+</div>
+<div class="main-panel">
+  <!-- <app-header></app-header> -->
+  <user-navbar></user-navbar>
+  <section class="bg-account-pages vh-200" style="padding-top: 25px;" >
+    <div class="main-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="card">
+                      <div class="card-header card-header-danger">
+                          <h4 class="card-title">Edit Profile</h4>
+                          <p class="card-category">Complete your profile</p>
+                      </div>
+                      <div class="card-body">
+                          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                              
+                            <div class="row">
+                                  <div class="col-md-5">
+                                    <!-- <div><label class="form-label">Company</label></div> -->
+                                    <mat-form-field class="example-full-width" >
+                                      <mat-label>Company</mat-label>
+                                        <!-- <input matInput placeholder="Company (disabled)" formControlName="company" disabled> -->
+                                        <input matInput formControlName="company">
+                                      </mat-form-field>
+                                  </div>
+
+
+                                  <div class="col-md-3">
+                                    <!-- <label class="form-label">Username:</label> -->
+                                      <mat-form-field class="example-full-width">
+                                        <mat-label>Username</mat-label>
+                                        <!-- <input matInput placeholder="Username"> -->
+                                        <!-- [maxLength]="64" -->
+                                        <input 
+                                        matInput 
+                                        [maxLength]="30"
+                                        matTooltip="30 Character Max Limit"
+                                        formControlName="username"
+                                        placeholder="Username"
+                                        >
+                                      </mat-form-field>
+                                  </div>
+
+                                  
+                                  <div class="col-md-4">
+                                    <!-- <div><label class="form-label">E-mail:</label></div> -->
+                                      <mat-form-field class="example-full-width">
+                                        <mat-label>E-mail</mat-label>
+                                        <input matInput placeholder="Email address" type="email" formControlName="email">
+                                      </mat-form-field>
+                                  </div>
+                              </div>
+
+                              <!-- line -->
+
+                              <!-- <div email="row">
+                                  <div class="col-md-4">
+                                    <div><label class="form-label">First Name:</label></div>
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="First Name" type="text" formControlName="firstName">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div><label class="form-label">Last Name:</label></div>
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Last Name" type="text" formControlName="lastName">
+                                    </mat-form-field>
+                                  </div>
+                              </div> -->
+
+                              <div class="row">
+                                <!-- <div class="col-md-4">
+                                  <div><label class="form-label">City:</label></div>
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="City" type="text" formControlName="city">
+                                  </mat-form-field>
+                                </div> -->
+                                <div class="col-md-4">
+                                  <!-- <div><label class="form-label">First Name:</label></div> -->
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>First Name</mat-label>
+                                      <input matInput placeholder="First Name" type="text" formControlName="firstName">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                  <!-- <div><label class="form-label">Last Name:</label></div> -->
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>Last Name</mat-label>
+                                      <input matInput placeholder="Last Name" type="text" formControlName="lastName">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                              <!-- line -->
+
+
+                              <div class="row">
+                                  <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>Address</mat-label>
+                                      <input matInput placeholder="Adress" type="text" formControlName="address">
+                                    </mat-form-field>
+                                  </div>
+                              </div>
+                              <div class="row">              
+                                  <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>City</mat-label>
+                                      <input matInput placeholder="City" type="text" formControlName="city">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>Country</mat-label>
+                                      <input matInput placeholder="Country" type="text" formControlName="country">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                      <mat-label>Postal Code</mat-label>
+                                      <input matInput placeholder="Postal Code" type="text" formControlName="postCode">
+                                    </mat-form-field>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-12">
+                                    <mat-form-field class="example-full-width" style="min-width: 100%" >
+                                      <mat-label>About Me</mat-label>
+                                      <textarea matInput placeholder=" Enter information about yourself" formControlName="aboutMe"></textarea>
+                                    </mat-form-field>
+                                      <!-- <div class="form-group">
+
+                                          <div class="form-group">
+                                              <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                              <textarea class="form-control" rows="5"></textarea>
+                                          </div>
+                                      </div> -->
+                                  </div>
+                              </div>
+                              <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                              
+                              <div class="clearfix"></div>
+                          </form>
+                      </div>
+                  </div>
+                  <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="onChange()">Change Password?</button>
+                  <!-- edit password section begins -->
+                  @if(this.changePasswordActive){
+                    <app-change-password (documentID)="changePasswordCheck($event)"></app-change-password>                    
+                  }
+                  
+                  <!-- edit password section ends -->
+
+              </div>
+              <div class="col-md-4">
+                  <div class="card card-profile">
+                      <div class="card-avatar">
+                          <a href="javascript:void(0)">
+                            <img class="img" src="{{ this.image_file }}"> />
+                          </a>
+                      </div>
+                      <div class="card-body">
+                          <h6 class="card-category text-gray">Account Type: {{ this.currentUser.role }}</h6>
+                          <!-- <h4 class="card-title">Alec Thompson</h4> -->
+                          <h4 class="card-title">{{ this.currentUser.firstName }} {{ this.currentUser.lastName }}</h4>
+                          <!-- <p class="card-description">
+                              Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                          </p> -->
+                          <!-- <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a> -->    
+                          
+                          
+
+
+                          <!-- ########## upload image secion begins ########## -->
+                          
+                          <!-- <div class="dropzone" appDrag (files)="fileDropped($event)">
+                            <div class="text-wrapper">
+                              <div class="centered">
+                                <mat-icon class="mat-icon">cloud_upload</mat-icon>
+                                <div>
+                                  Drag & Drop to Upload File
+                                </div>
+                                or 
+                                <a href="javascript:void(0)" (click)="selectFile.click()" class="browse-button">browse</a>
+                              </div>
+                            </div>
+                          </div> -->
+
+                          <button  mat-raised-button type="submit" class="btn btn-danger pull-right m-2" (click)="updateProfilePic()">Update Profile Pic</button>
+                          <button [disabled]="!this.currentUser.image[0]" mat-raised-button  type="submit" class="btn btn-danger pull-right" (click)="submitProfilePic()">
+                            Submit</button>
+
+                          <input 
+                          type="file" 
+                          style="display: none;"
+                          multiple 
+                          value="select" 
+                          #selectFile 
+                          class="file-upload mt-3"
+                          accept="image/png, image/jpeg"
+                          name='picture'
+                          (change)="onFileSelected($event)">
+
+                          <div class="mt-5">
+                            <div class="row">
+                              <mat-grid-list cols="4" rowHeight="1:1">
+                                <mat-grid-tile *ngFor="let file of this.currentUser.image; let i = index">
+                                  <div style="position: relative;">
+                                    <span class="btn-remove-image" (click)="removeImages(i)">x</span>
+                                    <img [src]="file.url" width="60px" height="60px">
+                                  </div>
+                                </mat-grid-tile>
+                              </mat-grid-list>
+                            </div>
+                          </div>
+
+                          <!-- ########## upload image secion ends ##########  -->
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+<!-- end of page  -->
+     <!-- <app-footer></app-footer> -->
+     <app-user-footer></app-user-footer>
+     </section>
+</div>
+
+

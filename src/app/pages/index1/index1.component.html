@@ -1,0 +1,73 @@
+<app-header></app-header>
+ 
+ <!--START HOME-->
+ <section class="section bg-home home-half" id="home" data-image-src="images/bg-home.jpg">
+   <div class="bg-overlay"></div>
+   <div class="display-table">
+     <div class="display-table-cell">
+       <div class="container">
+         <div class="row">
+           <div class="col-lg-8 offset-lg-2 text-white text-center">           
+             <h1 class="home-title">Striving to help clients manage their Coronary health as and when they need to.</h1>
+             <p class="pt-3 home-desc">An expert opinion a fingertip away.</p>
+             <!-- <p class="play-shadow mt-4"><a (click)="openModal(content)"
+                 class="play-btn video-play-icon"><i class="mdi mdi-play text-center"></i></a></p> -->
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="wave-effect wave-anim">
+    <div class="waves-shape shape-one">
+      <div class="wave wave-one">
+        <svg width="2000" height="100" viewBox="0 0 2000 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M471 45C263 -22.2 71 18.6667 1 47.5V119H1999.5V34.5C1917.9 85.3 1823.83 68.3333 1787 53.5C1721.8 25.1 1603.17 9.33333 1552 4.99999C1366.4 -12.6 1172.67 34.3333 1099 60C1014.6 91.6 831.833 97.5 751 96.5C664.6 96.5 528.333 62.1667 471 45Z" fill="white" stroke="white" />
+        </svg>
+      </div>
+    </div>
+    <div class="waves-shape shape-two">
+      <div class="wave wave-two">
+      </div>
+    </div>
+    <div class="waves-shape shape-three">
+      <div class="wave wave-three">
+      </div>
+    </div>
+  </div>
+   <!-- <div class="bg-pattern-effect">
+     <img src="assets/images/bg-pattern.png" alt="" />
+     <svg width="100%" height="43" viewBox="0 0 2002 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+          d="M0 9.49999V42L1998.5 40V23H1962L1879 33L1758.5 36L1703 29.5L1304.5 21.5C1285.3 15.5 1183.83 24 1135.5 29L636 35.5C455.2 1.89999 136.667 4.16665 0 9.49999Z"
+          fill="white" fill-opacity="0.1" />
+      <path opacity="0.1"
+          d="M0 33.5V41.5L1997.5 42V27H1972.5C1585.3 -21.8 1403.17 6.66666 1360.5 27C1299.7 13.4 1035.17 6 910.5 4C856.1 -6.8 597.5 8.5 475 17.5L0 33.5Z"
+          fill="white" />
+      <path
+          d="M0 31.6689V42.1689L2001.5 41.6689V11.6689L1942.25 18.3143C1910.49 21.8758 1879.21 29.7147 1847.38 32.5593C1799.52 36.8366 1750.41 29.3968 1727 23.6689C1577.8 -8.33114 1367.17 10.3355 1280.5 23.6689C1199.3 40.8689 1126.17 30.8355 1106 23.6689C1023.13 -2.89279 818.252 7.7814 689.669 19.2529C659.224 21.9691 629.271 29.2178 598.77 31.21C559.856 33.7516 520.953 28.0794 502 23.6689C395.2 -8.73115 122.833 15.1689 0 31.6689Z"
+          fill="white" />
+  </svg>
+   </div> -->
+ </section>
+
+<ng-template #content let-modal>
+  <div class="modal-content home-modal">
+   <div class="modal-header border-0">
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+   </div>
+   <video id="VisaChipCardVideo" class="video-box" controls>
+       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+   </video>
+</div>
+</ng-template>
+
+ <!--END HOME-->
+ <div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+   <app-services></app-services>
+   <app-features></app-features>
+   <!-- <app-pricing></app-pricing> -->
+   <!-- <app-team></app-team> -->
+   <!-- <app-blog></app-blog> -->
+   <app-contact></app-contact>
+   <app-footer></app-footer>
+ </div>

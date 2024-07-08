@@ -1,0 +1,70 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "baseUrl": "./", //maybe affecting scss files, TypeScript begins looking for files starting at the same folder as tsconfig.json itself
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "emitDecoratorMetadata": true, ///newly added 28-06-2024
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      // "es2019",
+      "es2020",
+      "dom"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "useDefineForClassFields": false
+  }
+}
+
+////////////////////////////////////////config file 28-06-2024////////////////////////////////////////
+// {
+//   "compileOnSave": false,
+//   "compilerOptions": {
+//     "baseUrl": "./",
+//     "outDir": "./dist/out-tsc",
+//     "sourceMap": true,
+//     "declaration": false,
+//     "downlevelIteration": true,
+//     "experimentalDecorators": true,
+//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "target": "ES2022",
+//     "module": "es2020",
+//     "lib": [
+//       "es2019",
+//       "dom"
+//     ],
+//     "useDefineForClassFields": false
+//   }
+// }
+
+////////////////////////////////////////config file 27-06-2024////////////////////////////////////////
+// {
+//   "compileOnSave": false,
+//   "compilerOptions": {
+//     "baseUrl": "./",
+//     "outDir": "./dist/out-tsc",
+//     "sourceMap": true,
+//     "declaration": false,
+//     "downlevelIteration": true,
+//     "experimentalDecorators": true,
+//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "target": "ES2022",
+//     "module": "es2020",
+//     "lib": [
+//       "es2018",
+//       "dom"
+//     ],
+//     "useDefineForClassFields": false
+//   }
+// }

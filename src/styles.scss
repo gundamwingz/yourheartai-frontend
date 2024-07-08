@@ -1,0 +1,220 @@
+@use '@angular/material' as mat;
+@use '@material/textfield';
+
+@import 'theme.scss';
+
+@import 'medium-editor/dist/css/medium-editor.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=block');
+
+@import '~ngx-toastr/toastr.css';
+
+@font-face {
+  font-family: 'Y14.5-2018';
+  src: url('assets/fonts/Y14.5-2018.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .contain-size {
+    contain: size;
+  }
+}
+
+.density-5 {
+  @include mat.form-field-density(-5);
+  @include mat.icon-density(-5);
+  @include mat.icon-button-density(-5);
+}
+
+.density-3 {
+  @include mat.form-field-density(-5);
+  @include mat.icon-button-density(-3);
+  @include mat.icon-density(-3);
+}
+
+.density-2 {
+  @include mat.form-field-density(-2);
+}
+
+.density-1 {
+  @include mat.form-field-density(-1);
+}
+
+/* fixes issue with density & filled form fields - they still only work for density-1 & -2 */
+// .mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined)
+//   .mat-mdc-floating-label {
+//   display: inline !important;
+// }
+/* //////////////////// */
+
+/* uses disabled color for mat suffix in form fields */
+.mdc-text-field--filled.mdc-text-field--disabled .mat-mdc-form-field-text-suffix {
+  color: var(--mdc-filled-text-field-disabled-input-text-color) !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mat-mdc-form-field-text-suffix {
+  color: var(--mdc-filled-text-field-input-text-color) !important;
+}
+/* //////////////////// */
+
+/* fixes issue with tailwind and outline fields */
+.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field .mdc-notched-outline__notch {
+  border-right-style: hidden;
+}
+.mat-mdc-input-element {
+  box-shadow: none !important;
+}
+
+/* fixes issue with blurred floating labels in Chrome */
+.mat-mdc-floating-label.mdc-floating-label,
+.mat-mdc-floating-label.mdc-floating-label mat-label,
+mat-form-field .mdc-text-field {
+    will-change: unset;
+}
+/* ///////////////// */
+
+mat-icon.icon-fill {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+}
+
+  .medium-editor-element p {
+    margin: 0;
+  }
+
+  .medium-toolbar-arrow-under:after {
+    top: 40px;
+    border-color: transparent transparent transparent transparent;
+  }
+
+  .medium-toolbar-arrow-over:before {
+    top: -8px;
+    border-color: transparent transparent #fff transparent;
+  }
+
+  .medium-editor-toolbar {
+    background-color: #fff;
+    border-radius: 4px;
+    border: solid 1px #e0e0e0;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  .medium-editor-action .mat-icon {
+    padding-top: 10px;
+  }
+
+  .medium-editor-toolbar li {
+    padding: 0;
+  }
+
+  .medium-editor-toolbar li button {
+    font-size: 18px;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-right: 1px solid #e0e0e0;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .medium-editor-toolbar li button:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+  .medium-editor-toolbar li .medium-editor-button-active {
+    background-color: #e0e0e0;
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .medium-editor-toolbar li .medium-editor-button-last {
+    border-right: none;
+  }
+
+  // .markdown {
+  //   // @import 'assets/_pcp_oam_stylesheet.scss';
+  // }
+
+
+mat-accordion mat-expansion-panel {
+  mat-expansion-panel-header {
+    height: 40px; // height may be different for you
+  }
+  .mat-expansion-panel-content {
+    height: 0;
+  }
+  &.mat-expanded {
+    mat-expansion-panel-header {
+      height: 64px; // height may be different for you
+    }
+    .mat-expansion-panel-content {
+      height: auto;
+    }
+  }
+}
+
+.mat-tab-label-active .mat-tab-label-content {
+    color: mat.get-color-from-palette($primary);
+}
+
+.mat-tab-label-content > mat-icon {
+  margin-right: 8px;
+}
+
+.mat-button-toggle-checked {
+  background-color: mat.get-color-from-palette($accent);
+
+  button {
+      color: mat.get-color-from-palette($accent, default-contrast);
+  }
+}
+
+.button-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.tooltip-pre-line {
+  white-space: pre-line;
+}
+
+input[type=number]:not(.spinner)::-webkit-outer-spin-button,
+input[type=number]:not(.spinner)::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]:not(.spinner) {
+    -moz-appearance:textfield;
+}
+
+a.active{
+  color: red !important
+}
+
