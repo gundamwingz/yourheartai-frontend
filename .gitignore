@@ -47,8 +47,6 @@ testem.log
 Thumbs.db
 
 src/environments/environment.dev.ts
-package-lock.json
-package.json
 ssl/localhost.pem
 ssl/localhost-key.pem
 
