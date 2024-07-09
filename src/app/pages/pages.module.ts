@@ -28,6 +28,11 @@ import { MatInputModule } from '@angular/material/input';
 import { AiSummaryComponent } from './ai_models/ai-summary/ai-summary.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AiFrontComponent } from './ai_models/ai-front.component';
+import { PostsComponent } from './posts/posts.component';
+import { AiCnnComponent } from './ai_models/ai-cnn/ai-cnn.component';
+import { AiLstmComponent } from './ai_models/ai-lstm/ai-lstm.component';
+import {MatTabsModule} from '@angular/material/tabs'
 
 @NgModule({
   declarations: [
@@ -38,9 +43,13 @@ import { MatDialogModule } from '@angular/material/dialog';
     RecoverpwdComponent,
     DashboardComponent,
     UserProfileComponent,
+    AiCnnComponent,
+    AiLstmComponent,
+    AiFrontComponent,
     AiSummaryComponent,
     ChangePasswordComponent,
-    UpdateProfilePicComponent
+    UpdateProfilePicComponent,
+    PostsComponent,
   ],
   imports: [
     CommonModule,
@@ -57,7 +66,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTooltipModule,
     MatInputModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}

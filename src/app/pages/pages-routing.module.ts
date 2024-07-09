@@ -57,8 +57,8 @@ export const routes: Routes = [
 
     },
     {
-        path: 'ai-summary',
-        data: { title: "AI Summary", showInHomeNav: false },
+        path: 'app-ai-front',
+        data: { title: "AI Models", showInHomeNav: true },
         component: AiSummaryComponent,
         // canActivate: [authGuard],
         // data: {
