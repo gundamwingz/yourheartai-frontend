@@ -46,7 +46,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-src/environments/environment.dev.ts
 ssl/localhost.pem
 ssl/localhost-key.pem
 
