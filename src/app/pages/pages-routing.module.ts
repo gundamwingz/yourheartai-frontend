@@ -11,6 +11,8 @@ import { AuthService } from '../shared/services/auth.service';
 import { DashboardComponent } from './userpages/dashboard/dashboard.component';
 import { UserProfileComponent } from './userpages/user-profile/user-profile.component';
 import { AiSummaryComponent } from './ai_models/ai-summary/ai-summary.component';
+import { AiFrontComponent } from './ai_models/ai-front.component';
+import { PostsComponent } from './posts/posts.component';
 
 export const routes: Routes = [
     {
@@ -48,23 +50,31 @@ export const routes: Routes = [
         path: 'dashboard',
         data: { title: "Dashboard", showInHomeNav: true },
         component: DashboardComponent,
-
+        // canActivate: [authGuard],
+        //   roles: ['admin', 'patient','medicalStaff'],
     },
     {
         path: 'user-profile',
         data: { title: "User Profile", showInHomeNav: true },
         component: UserProfileComponent,
-
+        // canActivate: [authGuard],
+        //   roles: ['admin', 'patient','medicalStaff'],
     },
     {
-        path: 'app-ai-front',
+        path: 'testimonials',
+        data: { title: "Testimonials", showInHomeNav: true },
+        component: PostsComponent,
+        // canActivate: [authGuard],
+        //   roles: ['admin', 'patient','medicalStaff'],
+    },
+    {
+        path: 'ai-front',
         data: { title: "AI Models", showInHomeNav: true },
-        component: AiSummaryComponent,
+        component: AiFrontComponent,
         // canActivate: [authGuard],
         // data: {
         //   group: 'CAPS/PFT/CHK',
-        //   title: 'Shrink Fit',
-        //   roles: ['chk', 'admin'],
+        //   roles: ['admin', 'patient','medicalStaff'],
         // },
     },
     {
