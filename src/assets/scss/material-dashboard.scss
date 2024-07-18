@@ -16,61 +16,59 @@
 
 */
 // TODO: Need to sort out CSS that will be used accross dashboard that doesn't affect original sites css, don't like new one!
- @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
- @import "core/mixins";
- @import "core/variables";
- @import "bootstrap/scss/bootstrap";
+@import "core/mixins";
+@import "core/variables";
+@import "bootstrap/scss/bootstrap";
 
-
- // Core Components
-
+// Core Components
 
 /*** problem import begins ***/
 // FIXME: Function has 4 arguements error?!
- @import "core/buttons"; 
+@import "core/buttons";
 
 /*** problem import ends ***/
- @import "core/checkboxes";
- @import "core/radios";
- @import "core/forms";
- @import "core/input-group";
- @import "core/images";
+@import "core/checkboxes";
+@import "core/radios";
+@import "core/forms";
+@import "core/input-group";
+@import "core/images";
 
- // FIXME: FIx navbar CSS clash!
+// FIXME: FIx navbar CSS clash!
 /*** Change from dorsin css begins ***/
- @import "core/navbar";
+@import "core/navbar"; // FIXME:
 /*** Change from dorsin css ends ***/
 
- @import "core/alerts";
- @import "core/type";
+@import "core/alerts";
+@import "core/type";
 
 /*** problem import begins ***/
- @import "core/tabs"; 
+@import "core/tabs";
 /** fixed error via this link: https://raw.githubusercontent.com/twbs/bootstrap/v4-dev/scss/mixins/_hover.scss **/
 /*** problem import ends ***/
 
- @import "core/tooltip";
- @import "core/popover";
- @import "core/dropdown";
- @import "core/togglebutton";
- @import "core/ripples";
- @import "core/footers";
- @import "core/sidebar-and-main-panel";
- @import "core/fixed-plugin";
- @import "core/tables";
- @import "core/misc";
+@import "core/tooltip";
+@import "core/popover";
+@import "core/dropdown";
+@import "core/togglebutton";
+@import "core/ripples";
+//  @import "core/footers"; // FIXME:
+@import "core/sidebar-and-main-panel";
+@import "core/fixed-plugin";
+@import "core/tables";
+@import "core/misc";
 
 @import "core/cards";
 @import "core/cards/card-stats";
 @import "core/cards/card-profile";
 @import "core/cards/card-plain";
 
- //plugin scss
- @import "core/plugins/animate";
- @import "core/plugins/chartist";
- @import "core/plugins/perfect-scrollbar";
+//plugin scss
+@import "core/plugins/animate";
+@import "core/plugins/chartist";
+@import "core/plugins/perfect-scrollbar";
 
- @import "core/responsive";
+@import "core/responsive";
 
 @import "core/angular-modal.scss";

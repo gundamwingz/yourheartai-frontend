@@ -18,28 +18,36 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field'; 
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { DashboardComponent } from './userpages/dashboard/dashboard.component';
 
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { ChangePasswordComponent, UpdateProfilePicComponent, UserProfileComponent } from './userpages/user-profile/user-profile.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {
+  ChangePasswordComponent,
+  UpdateProfilePicComponent,
+  UserProfileComponent,
+} from './userpages/user-profile/user-profile.component';
 import { MatInputModule } from '@angular/material/input';
 import { AiSummaryComponent } from './ai_models/ai-summary/ai-summary.component';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AiFrontComponent } from './ai_models/ai-front.component';
 import { PostsComponent } from './posts/posts.component';
 import { AiCnnComponent } from './ai_models/ai-cnn/ai-cnn.component';
 import { AiLstmComponent } from './ai_models/ai-lstm/ai-lstm.component';
-import {MatTabsModule} from '@angular/material/tabs'
+import { MatTabsModule } from '@angular/material/tabs';
+import { TempComponent } from './temp/temp.component';
 
 @NgModule({
   declarations: [
-    Index1Component, 
+    Index1Component,
     LoginComponent,
-    LogoutComponent, 
-    SignupComponent, 
+    LogoutComponent,
+    SignupComponent,
     RecoverpwdComponent,
     DashboardComponent,
     UserProfileComponent,
@@ -50,11 +58,12 @@ import {MatTabsModule} from '@angular/material/tabs'
     ChangePasswordComponent,
     UpdateProfilePicComponent,
     PostsComponent,
+    TempComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    SharedModule, 
+    SharedModule,
     ScrollToModule.forRoot(),
     NgbModalModule,
     ReactiveFormsModule,
@@ -70,7 +79,10 @@ import {MatTabsModule} from '@angular/material/tabs'
     MatTabsModule,
   ],
   providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}
-  ]
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { floatLabel: 'always' },
+    },
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

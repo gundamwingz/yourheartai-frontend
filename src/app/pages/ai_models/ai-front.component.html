@@ -1,27 +1,33 @@
-<div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+<div
+  class="sidebar"
+  data-color="danger"
+  data-background-color="white"
+  data-image="./assets/img/sidebar-1.jpg"
+>
   <app-sidebar></app-sidebar>
-  <div class="sidebar-background" style="background-image: url(./assets/images/sidebar-4.jpg)"></div> 
+  <div
+    class="sidebar-background"
+    style="background-image: url(./assets/images/sidebar-4.jpg)"
+  ></div>
 </div>
-<div class="main-panel" style="color: white;">
+<div class="main-panel" style="color: white">
   <user-navbar></user-navbar>
-  <section class="bg-account-pages vh-200" style="padding-top: 25px;">
+  <section class="bg-account-pages vh-200" style="padding-top: 25px">
     <div class="main-content">
       <mat-tab-group mat-align-tabs="start">
-      <mat-tab 
-      [labelClass]="'no-ink-bar'"
-      label="AI Summary">
-        <app-ai-summary></app-ai-summary>    
-      </mat-tab>
-      <mat-tab label="CNN">
-        <app-ai-cnn></app-ai-cnn>
-      </mat-tab>
-      <mat-tab label="LSTM">
-        <app-ai-lstm></app-ai-lstm>
-      </mat-tab>
-    </mat-tab-group>
+        <mat-tab [labelClass]="'no-ink-bar'" label="AI Summary">
+          <app-ai-summary></app-ai-summary>
+        </mat-tab>
+        <mat-tab label="CNN">
+          <app-ai-cnn></app-ai-cnn>
+        </mat-tab>
+        <mat-tab label="LSTM">
+          <app-ai-lstm></app-ai-lstm>
+        </mat-tab>
+        <mat-tab label="Cancer">
+          <app-temp></app-temp>
+        </mat-tab>
+      </mat-tab-group>
     </div>
   </section>
-
-
-
 </div>
