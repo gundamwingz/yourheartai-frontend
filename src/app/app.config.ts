@@ -22,9 +22,6 @@ import { routes } from './app-routing.module';
 // import { errorInterceptor } from './shared/services/error.Interceptor';
 // import { jwtInterceptor } from './shared/services/jwt.interceptor';
 
-
-
-
 import { Component } from '@angular/core';
 
 const socketIoConfig: SocketIoConfig = {

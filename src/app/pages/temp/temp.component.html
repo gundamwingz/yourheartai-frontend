@@ -8,22 +8,38 @@
     <title>Skin Cancer Lesion Classifier</title>
   </head>
 
-  <body >
+  <body style="background: #000">
     <h2 style="color: Violet">Skin Cancer Lesion Classifier</h2>
     <p></p>
     <h4 style="color: Violet">Upload an image and click submit</h4>
 
-    <form method="post" action="/" enctype="multipart/form-data">
+    <form action="/" enctype="multipart/form-data">
       <dl>
         <p style="color: Violet">
-          <input type="file" name="file" autocomplete="off" required />
+          <input 
+          type="file" 
+          multiple 
+          value="select" 
+          #selectFile 
+          class="file-upload mt-3"
+          accept="image/png, image/jpeg"
+          name='picture'
+          (change)="onFileSelected($event)">
         </p>
       </dl>
       <p style="color: Violet">
-        <input type="submit" name="submit" value="Submit" />
+        <button [disabled]="!this.userImage[0]" mat-raised-button  type="submit" class="btn btn-danger pull-right" (click)="submitCNNImage()">
+          Submit</button>
       </p>
     </form>
 
-    <p style="color: MediumSeaGreen"></p>
+    <p style="color: MediumSeaGreen">
+      @if (this.aiPrediction){
+        Diagnosis for the following image is: <u><h3 style="color:MediumSeaGreen;">{{ this.aiPrediction.prediction }}</h3></u><br>
+        <img class="img" src="{{ this.aiImage_url }}" width="300" height="225">
+      }
+    
+    
+    </p>
   </body>
 </html>

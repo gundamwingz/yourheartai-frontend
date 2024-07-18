@@ -136,7 +136,7 @@ export class AuthService {
         return this.httpClient.get<any>(this.apiUrlYha + '/users/account', { headers: headers })
     }
 
-    getFullImageUrl(){
+    getFullBaseUrl(){
         var imgUrl: string;
         return imgUrl = environment.apiUrl
     }

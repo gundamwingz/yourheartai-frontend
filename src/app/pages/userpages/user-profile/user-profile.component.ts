@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
   image_file: string;
   private _ngZone: any;
   
-
+cc
   constructor(
     public selectService: SelectService,
     private formBuilder: FormBuilder,
@@ -199,8 +199,7 @@ export class UserProfileComponent implements OnInit {
   getUserProfilePic(){
     this.authService.getUserProfilePic().pipe(first()).subscribe({      
       next: (res) => {        
-        this.authService.getFullImageUrl();
-        this.image_file = this.authService.getFullImageUrl()+res.image_url;   
+        this.image_file = this.authService.getFullBaseUrl()+res.image_url;
         console.log("res: ",res)    
       },
       error: error => {
@@ -332,11 +331,10 @@ export class ChangePasswordComponent {
   get f() { return this.form.controls; }
 
   onSubmit() { 
-    var oldPassword: string = ""
+    var oldPassword: string = "";
     this.submitted = true;
     
     if (this.form.invalid) {
-      // alert("invalide form")
       return;
     }
     
@@ -371,15 +369,6 @@ export class ChangePasswordComponent {
 // TODO: Switch this update profile image to dialoge instead
 @Component({
   template: ` 
-
-
-  <!-- <p>Are you sure you want to remove {{ this.currentUser.image }}?</p>
-    <mat-dialog-actions align="end">
-      <button mat-raised-button mat-dialog-close color="warn" [mat-dialog-close]="true">
-        Remove
-      </button>
-      <button mat-button mat-dialog-close [mat-dialog-close]="false">Cancel</button>
-    </mat-dialog-actions> -->
     <mat-dialog-content style="display: flex; text-align: center; margin: auto; width: 450px; height 600px;">
       <mat-dialog-actions align="end">
       <div class="dropzone" appDrag (files)="fileDropped($event)">
@@ -394,9 +383,7 @@ export class ChangePasswordComponent {
           </div>
         </div>
       </div>
-      <!-- <button [disabled]="!this.currentUser.image[0]" mat-raised-button type="submit" class="btn btn-danger pull-right m-4" (click)="updateProfilePic()">Update Profile Pic</button> -->
-      <!-- <button  mat-raised-button type="submit" class="btn btn-danger pull-right m-4" (click)="updateProfilePic()">Update Profile Pic</button> -->
-
+      
       <input 
       type="file" 
       style="display: none;"

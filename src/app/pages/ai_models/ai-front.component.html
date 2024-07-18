@@ -15,6 +15,9 @@
   <section class="bg-account-pages vh-200" style="padding-top: 25px">
     <div class="main-content">
       <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Cancer">
+          <app-temp></app-temp>
+        </mat-tab>
         <mat-tab [labelClass]="'no-ink-bar'" label="AI Summary">
           <app-ai-summary></app-ai-summary>
         </mat-tab>
@@ -23,9 +26,6 @@
         </mat-tab>
         <mat-tab label="LSTM">
           <app-ai-lstm></app-ai-lstm>
-        </mat-tab>
-        <mat-tab label="Cancer">
-          <app-temp></app-temp>
         </mat-tab>
       </mat-tab-group>
     </div>
