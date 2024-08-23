@@ -1,0 +1,145 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Stenosis Detection</h4>
+          <p class="card-category">
+            Upload Your Images to Detect Stenosis Regions
+          </p>
+        </div>
+        <div class="card-body">
+          <h4 style="color: Violet">Upload an image and click submit</h4>
+
+          <form action="/" enctype="multipart/form-data">
+            <dl>
+              <p style="color: Violet">
+                <input 
+                type="file" 
+                multiple 
+                value="select" 
+                #selectFile 
+                class="file-upload mt-3"
+                accept="image/png, image/jpeg, image/bmp"
+                name='picture'
+                (change)="onFileSelected($event)">
+              </p>
+            </dl>
+            <p style="color: Violet">
+              <button [disabled]="!this.userImage[0]" mat-raised-button  type="submit" class="btn btn-danger pull-right" (click)="submitCNNImage()">
+                Submit</button>
+            </p>
+          </form>
+          <form>           
+
+            <!-- line -->
+            <!-- <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Age</mat-label>
+                  <input
+                    matInput
+                    placeholder="Age"
+                    type="text"
+                    formControlName="age"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Gender</mat-label>
+                  <input
+                    matInput
+                    placeholder="Gender"
+                    type="text"
+                    formControlName="gender"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Chest Pain</mat-label>
+                  <input
+                    matInput
+                    placeholder="Chest Pain"
+                    type="text"
+                    formControlName="chestPain"
+                  />
+                </mat-form-field>
+              </div>
+            </div> -->
+            <!-- line -->
+            <!-- <button
+              mat-raised-button
+              type="submit"
+              class="btn btn-danger pull-right">
+              Update Profile
+            </button> -->
+
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-profile">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">AI Diagnoses</h4>
+          <p class="card-category">Your Results</p>
+        </div>
+        <div class="card-body">
+          Results
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label>CHD Risk Percentage</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="chdRiskPercent"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>CHD Risk</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="chdRiskFeedback"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>Dr's Note</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="drsNote"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <p style="color: MediumSeaGreen">
+          @if (this.aiPrediction){
+            Diagnosis for the following image is: <u><h3 style="color:MediumSeaGreen;">{{ this.aiPrediction.prediction }}</h3></u><br>
+            <img class="img" src="{{ this.aiImage_url }}" width="300" height="225">
+          }    
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</div>

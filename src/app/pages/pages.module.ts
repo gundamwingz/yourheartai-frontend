@@ -37,8 +37,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AiFrontComponent } from './ai_models/ai-front.component';
 import { PostsComponent } from './posts/posts.component';
-import { AiCnnComponent } from './ai_models/ai-cnn/ai-cnn.component';
-import { AiLstmComponent } from './ai_models/ai-lstm/ai-lstm.component';
+import { AiMRcnnComponent } from './ai_models/ai-m-rcnn/ai-m-rcnn.component';
+import { AiMlpComponent } from './ai_models/ai-mlp/ai-mlp.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TempComponent } from './temp/temp.component';
 
@@ -51,9 +51,9 @@ import { TempComponent } from './temp/temp.component';
     RecoverpwdComponent,
     DashboardComponent,
     UserProfileComponent,
-    AiCnnComponent,
-    AiLstmComponent,
+    AiMRcnnComponent,
     AiFrontComponent,
+    AiMlpComponent,
     AiSummaryComponent,
     ChangePasswordComponent,
     UpdateProfilePicComponent,

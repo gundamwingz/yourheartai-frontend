@@ -15,17 +15,17 @@
   <section class="bg-account-pages vh-200" style="padding-top: 25px">
     <div class="main-content">
       <mat-tab-group mat-align-tabs="start">
-        <mat-tab label="Cancer">
-          <app-temp></app-temp>
-        </mat-tab>
         <mat-tab [labelClass]="'no-ink-bar'" label="AI Summary">
           <app-ai-summary></app-ai-summary>
         </mat-tab>
-        <mat-tab label="CNN">
-          <app-ai-cnn></app-ai-cnn>
+        <mat-tab label="M-RCNN">
+          <app-ai-m-rcnn></app-ai-m-rcnn>
         </mat-tab>
-        <mat-tab label="LSTM">
-          <app-ai-lstm></app-ai-lstm>
+        <mat-tab label="MLP">
+          <app-ai-mlp></app-ai-mlp>
+        </mat-tab>
+        <mat-tab label="Cancer">
+          <app-temp></app-temp>
         </mat-tab>
       </mat-tab-group>
     </div>

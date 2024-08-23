@@ -1,0 +1,239 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">Coronary Heart Disease Risk Predictor</h4>
+          <p class="card-category">
+            Upload Latest Health Data to get a Diagnosis
+          </p>
+        </div>
+        <div class="card-body">
+          <form>           
+
+            <!-- line -->
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Age</mat-label>
+                  <input
+                    matInput
+                    placeholder="Age"
+                    type="text"
+                    formControlName="age"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Gender</mat-label>
+                  <input
+                    matInput
+                    placeholder="Gender"
+                    type="text"
+                    formControlName="gender"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Chest Pain</mat-label>
+                  <input
+                    matInput
+                    placeholder="Chest Pain"
+                    type="text"
+                    formControlName="chestPain"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <!-- line -->
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Resting Blood Pressure(BP)</mat-label>
+                  <input
+                    matInput
+                    placeholder="Resting Blood Pressure"
+                    type="text"
+                    formControlName="restingBP "
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Serum cholestrol</mat-label>
+                  <input
+                    matInput
+                    placeholder="Serum cholestrol"
+                    type="text"
+                    formControlName="serumCholestrol"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Fasting Blood Sugar</mat-label>
+                  <input
+                    matInput
+                    placeholder="Fasting Blood Sugar"
+                    type="text"
+                    formControlName="fastingBloodSugar"
+                  />
+                </mat-form-field>
+              </div>
+            </div><!-- line -->
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Resting Electrocardiogram</mat-label>
+                  <input
+                    matInput
+                    placeholder="Resting Electrocardiogram"
+                    type="text"
+                    formControlName="restingRElectro"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Maximum Heart Rate</mat-label>
+                  <input
+                    matInput
+                    placeholder="Maximum Heart Rate"
+                    type="text"
+                    formControlName="maxHeartRate"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Exercise Induced Angina</mat-label>
+                  <input
+                    matInput
+                    placeholder="Exercise Induced Angina"
+                    type="text"
+                    formControlName="exerciseAngia"
+                  />
+                </mat-form-field>
+              </div>
+            </div><!-- line -->
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Old Peak ST</mat-label>
+                  <input
+                    matInput
+                    placeholder="Old Peak ST"
+                    type="text"
+                    formControlName="oldPeak"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Slope of Peak ex ST</mat-label>
+                  <input
+                    matInput
+                    placeholder="Slope of Peak ex ST"
+                    type="text"
+                    formControlName="slope"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Number of major vessels</mat-label>
+                  <input
+                    matInput
+                    placeholder="No. of major vessels"
+                    type="text"
+                    formControlName="noOfMajorVessels"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!-- line -->
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field
+                  class="example-full-width"
+                  style="min-width: 100%"
+                >
+                  <mat-label>About Me</mat-label>
+                  <textarea
+                    matInput
+                    placeholder=" Enter information about yourself"
+                    formControlName="aboutMe"
+                  ></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <!-- line -->
+
+            <button
+              mat-raised-button
+              type="submit"
+              class="btn btn-danger pull-right">
+              Update Profile
+            </button>
+
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-profile">
+        <div class="card-header card-header-danger">
+          <h4 class="card-title">AI Diagnoses</h4>
+          <p class="card-category">Your Results</p>
+        </div>
+        <div class="card-body">
+          Results
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label>CHD Risk Percentage</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="chdRiskPercent"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>CHD Risk</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="chdRiskFeedback"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field class="example-full-width">
+                <mat-label>Dr's Note</mat-label>
+                <input
+                  matInput
+                  placeholder=""
+                  type="text"
+                  formControlName="drsNote"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

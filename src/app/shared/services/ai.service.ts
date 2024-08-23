@@ -38,6 +38,22 @@ export class AIModelService  {
 
 
 
+    postStenosisCNNImage(userImage: FileHandle) {
+      var token = this.authService.userValue?.token
+      const headers = new HttpHeaders({            
+          'Authorization': `Bearer ${token}`
+      })
+      
+      var fileName = userImage.file.name;
+      var blobAttrs = {type: 'multipart/form-data'};
+      var file = new File([userImage.file], fileName, blobAttrs)
+
+      console.log("file: ",file)
+
+      const formData = new FormData();
+      formData.append('file', file, fileName);
+      return this.httpClient.post<any>(this.apiUrlYha + '/ai-prediction/cvd-mrcnn', formData, {headers: headers });
+  }
     postCancerCNNImage(userImage: FileHandle) {
       var token = this.authService.userValue?.token
       const headers = new HttpHeaders({            

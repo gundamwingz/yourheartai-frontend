@@ -8,11 +8,11 @@ import { ToastrService } from 'ngx-toastr';
 import { first, take } from 'rxjs';
 
 @Component({
-  selector: 'app-temp',
-  templateUrl: './temp.component.html',
-  styleUrl: './temp.component.css',
+  selector: 'app-ai-m-rcnn',
+  templateUrl: './ai-m-rcnn.component.html',
+  styleUrl: './ai-m-rcnn.component.css',
 })
-export class TempComponent {
+export class AiMRcnnComponent {
 
   loading = false;
   userImage: FileHandle[] = [];
@@ -48,11 +48,12 @@ export class TempComponent {
 
   onSubmit() {
     this.loading = true;
+
   }
 
   submitCNNImage(){
     const file: FileHandle = this.userImage[0];
-    this.aiService.postCancerCNNImage(file).pipe(first()).subscribe({      
+    this.aiService.postStenosisCNNImage(file).pipe(first()).subscribe({      
       next: (res) => {
         this.toastr.success("Run complete, see results below.");
         this.aiPrediction = res;
@@ -67,3 +68,5 @@ export class TempComponent {
   }
 
 }
+
+
