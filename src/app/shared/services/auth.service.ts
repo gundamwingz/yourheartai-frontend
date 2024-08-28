@@ -142,7 +142,6 @@ export class AuthService {
     }
     
     updateUserAccount(user: User) {
-        console.log("activated")
         var token = this.userValue?.token
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
@@ -152,7 +151,7 @@ export class AuthService {
         var saveObj: any;
         saveObj = { data: user };
         data = <JSON>saveObj;
-        console.log("data: ",data)
+        // console.log("data: ",data)
         return this.httpClient.post<any>(this.apiUrlYha + '/users/account', data, { headers: headers })
     }
     

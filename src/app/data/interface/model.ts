@@ -23,6 +23,21 @@ export class User {
     isLoggedIn?: boolean;
     token?: string;
 }
+export class PatientChdData {
+    id?: string;
+    age?: number;
+    gender?: number;
+    chestPain?: number;
+    restingBP?: number;
+    serumCholestrol?: number;
+    fastingBloodSugar?: number;
+    restingRElectro?: number;
+    maxHeartRate?: number;
+    exerciseAngia?: number;
+    oldPeak?: number;
+    slope?: number;
+    noOfMajorVessels?: number;
+}
 
 export interface PatientData {
     expanded: boolean;

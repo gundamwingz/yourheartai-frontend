@@ -22,9 +22,9 @@ id="navbar">
         <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
           <a [ngxScrollTo]="'#home'" href="javascript: void(0);" class="nav-link">Home</a>
         </li>     
-        <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
+        <!-- <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
           <a [ngxScrollTo]="'#services'" href="javascript: void(0);" class="nav-link">Services</a>
-        </li>
+        </li> -->
         <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
           <a [ngxScrollTo]="'#features'"  href="javascript: void(0);" class="nav-link">Features</a>
         </li>
@@ -49,9 +49,9 @@ id="navbar">
           <li class="nav-item" [routerLink]="'/dashboard'">
             <a href="javascript: void(0);" [routerLinkActive]="'active'" class="nav-link">Dashboard</a>
           </li>
-          <li class="nav-item" [routerLink]="'/testimonials'">
+          <!-- <li class="nav-item" [routerLink]="'/testimonials'">
             <a href="javascript: void(0);" [routerLinkActive]="'active'" class="nav-link">Testimonials</a>
-          </li>
+          </li> -->
         }
       }
       <!-- <li class="nav-item" [ngClass]="{'active':currentSection === 'pricing'}">

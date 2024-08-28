@@ -26,9 +26,8 @@ export class UserProfileComponent implements OnInit {
   currentUser: User = structuredClone(NewUser);
   imgUrl: string;
   image_file: string;
-  private _ngZone: any;
-  
-cc
+  private _ngZone: any;  
+
   constructor(
     public selectService: SelectService,
     private formBuilder: FormBuilder,
@@ -163,6 +162,7 @@ cc
   // }
 
   //TODO: Switch to dialog window.
+  
   updateProfilePic(){
       const dialogRef = this.dialog.open(UpdateProfilePicComponent, {
         data: this.currentUser,

@@ -9,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
  * Features component
  */
 export class FeaturesComponent implements OnInit {
+  isHomeActive: boolean = false;
+  user = JSON.parse(localStorage.getItem("user")); 
+  isLoggedIn = false;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if (this.user){
+      this.isLoggedIn = this.user?.isLoggedIn;
+    }
   }
-
 }
