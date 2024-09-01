@@ -149,7 +149,6 @@ export class AuthService {
         var saveObj: any;
         saveObj = { data: user };
         data = <JSON>saveObj;
-        // console.log("data: ",data)
         return this.httpClient.post<any>(this.apiUrlYha + '/users/account', data, { headers: headers })
     }
     
