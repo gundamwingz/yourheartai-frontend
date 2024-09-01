@@ -123,7 +123,6 @@ export class AuthService {
         data = <JSON>saveObj;
 
         return this.httpClient.post<any>(this.apiUrlYha + '/users/account-password-update', data, {headers: headers });
-        // return this.httpClient.post(`${environment.apiUrl}yha/users/account-password-update`, data, {headers: headers });
     }
     
     getUserAccount() {     
@@ -132,7 +131,6 @@ export class AuthService {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           })
-        // console.log(headers)        
         return this.httpClient.get<any>(this.apiUrlYha + '/users/account', { headers: headers })
     }
 

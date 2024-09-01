@@ -60,7 +60,6 @@ export class UserProfileComponent implements OnInit {
       },
     );
     this.getUserAccount()    
-    // console.log(this.image_file)
     this.getUserProfilePic()
   }
 
@@ -70,7 +69,6 @@ export class UserProfileComponent implements OnInit {
   getUserAccount (){
     var accountData: User = new User;
     this.authService.getUserAccount().subscribe((data)=>{
-      // console.log("userData from subscribe: ",data)
       accountData = data
       this.currentUser = accountData      
       this.form.controls['username'].setValue(accountData.username)
@@ -126,7 +124,6 @@ export class UserProfileComponent implements OnInit {
     this.currentUser.isLoggedIn = this.authService.IsAuthenticated();
     this.currentUser.id = ""
     this.currentUser.token = ""
-    // this.currentUser.token = this.f.email.value;
 
     this.loading = true;
     console.log("this.currentUser: ",this.currentUser)
