@@ -189,7 +189,6 @@ export class AuthService {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           })
-        // alert("this.apiUrlYha: "+this.apiUrlYha)
         return this.httpClient.get<any>(this.apiUrlYha + '/users/account-image', { headers: headers })
     }
 
@@ -200,9 +199,7 @@ export class AuthService {
         var token = this.userValue?.token
         const headers = new HttpHeaders({            
             'Authorization': `Bearer ${token}`
-        })
-        // var blobFile = new Blob([userImage.file], {type: 'multipart/form-data'} );
-        
+        })        
         var fileName = userImage.file.name;
         var blobAttrs = {type: 'multipart/form-data'};
         var file = new File([userImage.file], fileName, blobAttrs)
